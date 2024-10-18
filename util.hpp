@@ -18,11 +18,11 @@ float radian_to_degree(float theta) {
 }
 
 [[nodiscard]] int x_from_polar(const float magnitude, const float direction) {
-    return magnitude * std::cos(direction);
+    return (magnitude * std::cos(direction));
 }
 
 [[nodiscard]] int y_from_polar(const float magnitude, const float direction) {
-    return magnitude * std::sin(direction);
+    return (magnitude * std::sin(direction));
 }
 
 #endif //SPACESHIP_UTIL_HPP

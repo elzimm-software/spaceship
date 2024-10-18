@@ -39,7 +39,7 @@ public:
     }
 
     [[nodiscard]] float get_direction() const {
-        auto theta = std::atan(y/x);
+        auto theta = std::atan(y/(float)x);
         if (x >= 0) {
             return theta;
         } else {
