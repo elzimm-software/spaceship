@@ -8,19 +8,29 @@ class ControllableBody {
 protected:
     Point pos;
     float rotation;
-    Vector2 velocity;
+    float speed;
 
 public:
-    ControllableBody(int x, int y, float rotation) {
-        pos = Point(x,y);
+    Vector2 velocity;
+
+    ControllableBody(int x, int y, float rotation, float speed) {
+        pos = Point(x, y);
         this->rotation = rotation;
-        velocity = {0,0};
+        this->speed = speed;
+        velocity = {0, 0};
     }
 
-    ControllableBody(Point pos, float rotation) {
+    ControllableBody(Point pos, float rotation, float speed) {
         this->pos = pos;
         this->rotation = rotation;
-        velocity = {0,0};
+        this->speed = speed;
+        velocity = {0, 0};
+    }
+
+    void move() {
+        velocity = unit_vector(velocity);
+        pos.x += (velocity[0] * speed);
+        pos.y += (velocity[1] * speed);
     }
 };
 

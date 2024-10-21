@@ -30,16 +30,16 @@ public:
     }
 
     Point(const float magnitude, const float direction) {
-        x = x_from_polar(magnitude, direction);
-        y = y_from_polar(magnitude, direction);
+        x = math::x_from_polar(magnitude, direction);
+        y = math::y_from_polar(magnitude, direction);
     }
 
     [[nodiscard]] float get_magnitude() const {
-        return std::sqrt(x*x + y*y);
+        return std::sqrt(x * x + y * y);
     }
 
     [[nodiscard]] float get_direction() const {
-        auto theta = std::atan(y/(float)x);
+        auto theta = std::atan(y / (float) x);
         if (x >= 0) {
             return theta;
         } else {
@@ -48,8 +48,8 @@ public:
     }
 
     void from_polar(const float magnitude, const float direction) {
-        x = x_from_polar(magnitude,direction);
-        y = y_from_polar(magnitude,direction);
+        x = math::x_from_polar(magnitude, direction);
+        y = math::y_from_polar(magnitude, direction);
     }
 
 
