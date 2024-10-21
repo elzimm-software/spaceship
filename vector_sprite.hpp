@@ -5,14 +5,13 @@
 #include <cmath>
 #include "point.hpp"
 #include "util.hpp"
+#include "controllable_body.hpp"
 
 /**
  * Sprite constructed from a list of vertexes.
  */
-class VectorSprite {
+class VectorSprite: public ControllableBody {
 private:
-    Point pos;
-    float rotation;
     float scale;
     const Point* vertexes;
     int vertex_count;
